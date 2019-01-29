@@ -9,7 +9,8 @@ of file contents
 To Run - 
 1. Create a virtual environment and install the required dependencies from requirement.txt
 2. To run web server from terminal - python run.py
-3. To run interactive file daemon - python interactive_daemon.py
+3. Make sure APPLICATION_HOST constant value is updated with web server host name/ip in interactive_daemon.py
+4. To run interactive file daemon - python interactive_daemon.py
 
 -- Use /file POST api to create new file entry to be sync on server
 	with payload {"file_name": <file_name>,

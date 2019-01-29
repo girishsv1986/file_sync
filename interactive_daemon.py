@@ -6,7 +6,7 @@ import json
 
 import requests
 
-APPLICATION_HOST = "http://10.4.96.190:8080"
+APPLICATION_HOST = "http://<application_host:port>"
 FILE_SYNC_URL = "/file/content/%s"
 
 def get_file_content(token):
@@ -36,7 +36,7 @@ def upload_file_content(token, content):
     {'Content-Type': 'application/json; charset=utf-8'})
 
   try:
-    return session.post(
+    return session.patch(
       "%s%s" % (APPLICATION_HOST, FILE_SYNC_URL % token),
       data=json.dumps({"contents": "%s\n" % content})).json()
   except requests.exceptions.ConnectionError as ce:
